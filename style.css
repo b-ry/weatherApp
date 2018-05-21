@@ -1,0 +1,40 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans';
+  font-size: 10px;
+  background: #a5b1bb;
+  color: #364063;
+  margin: 0;
+  height: 100vh;
+}
+
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  align-items: center;
+}
+
+.temp-wrapper {
+  font-size: 10rem;
+  font-weight: 300;
+}
+
+.weather-icon {
+  flex-direction: column;
+}
+
+.wi {
+  font-size: 14rem;
+}
+
+.weather,
+.local {
+  font-family: 'Open Sans';
+  font-weight: 300;
+  font-size: 3rem;
+}
