@@ -1,17 +1,56 @@
 <!DOCTYPE html>
-<html lang="en"
-<head>
-  <meta charset="UTF-8">
-  <title>Weather app</title>
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.css" />
-  <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Open+Sans:300,400" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="style.css" />
+<html lang="en" <head>
+<meta charset="UTF-8">
+<title>Weather app</title>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.css" />
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Share:400,700" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="style.css" />
 
 </head>
-<body onload="getLocation()">
-  <div id="lat-lon"></div>
-  <script src="scripts.js"></script>
-</body>
-</html>
 
+<body onload="getLocation()">
+
+    <div id="lat-lon">
+        <div class="main-wrapper">
+
+            <div class="weather-icon">
+                <i class="wi"></i>
+                <div class="weather">--</div>
+                <div class="day-of-week">--</div>
+            </div>
+
+            <div class="weather-details">
+                <div class="current-info">
+                    <div class="time-wrapper"><i class="fa fa-clock-o"></i> <span class="time"></span></div>
+                    <div class="local">
+                        <i class="fa fa-map-marker"></i>
+                        <span class="city"></span>,
+                        <span class="country"></span>
+                    </div>
+                </div>
+
+                <div class="temp-wrapper">
+                    <div class="temp"></div>
+                    <div class="temp-high-low">
+                        <div class="temp-high-wrapper"><span>H </span><span class="temp-high"></span>&#176;</div>
+                        <div class="temp-low-wrapper"><span>L </span><span class="temp-low"></span>&#176;</div>
+                    </div>
+                </div>
+
+                <div class="switch">
+                    <button class="fahrenheit-trigger">F&#176;</button>/
+                    <button class="celsius-trigger">C&#176;</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="scripts.js"></script>
+
+</body>
+
+</html>
