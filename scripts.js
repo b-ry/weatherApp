@@ -79,37 +79,37 @@ colorScheme = () => {
     if (dayOrNight === "dayTime") {
         switch (true) {
             case currentTempInFahrenheit < 35:
-                timeColorScheme = "day_cold";
+                timeColorScheme = "day-cold";
                 break;
             case currentTempInFahrenheit < 55:
-                timeColorScheme = "day_chill";
+                timeColorScheme = "day-chill";
                 break;
             case currentTempInFahrenheit < 75:
-                timeColorScheme = "day_nice";
+                timeColorScheme = "day-nice";
                 break;
             case currentTempInFahrenheit < 95:
-                timeColorScheme = "day_warm";
+                timeColorScheme = "day-warm";
                 break;
             case currentTempInFahrenheit >= 96:
-                timeColorScheme = "day_hot";
+                timeColorScheme = "day-hot";
                 break;
         }
     } else if (dayOrNight === "nightTime") {
         switch (true) {
             case currentTempInFahrenheit < 35:
-                timeColorScheme = "night_cold";
+                timeColorScheme = "night-cold";
                 break;
             case currentTempInFahrenheit < 55:
-                timeColorScheme = "night_chill";
+                timeColorScheme = "night-chill";
                 break;
             case currentTempInFahrenheit < 75:
-                timeColorScheme = "night_nice";
+                timeColorScheme = "night-nice";
                 break;
             case currentTempInFahrenheit < 95:
-                timeColorScheme = "night_warm";
+                timeColorScheme = "night-warm";
                 break;
             case currentTempInFahrenheit >= 96:
-                timeColorScheme = "night_hot";
+                timeColorScheme = "night-hot";
                 break;
         }
     }
@@ -126,13 +126,13 @@ getWeather = (lat, lon) => {
         .then(function(data) {
 
             // Assigning temperature
-            currentTempInCelsius = Math.round(data.main.temp);
-            currentTempInFahrenheit = Math.round(currentTempInCelsius * 9) / 5 + 32;
+            currentTempInCelsius = Math.floor(data.main.temp);
+            currentTempInFahrenheit = Math.floor(currentTempInCelsius * 9) / 5 + 32;
 
-            highTempCelsius = Math.round(data.main.temp_max);
-            lowTempCelsius = Math.round(data.main.temp_min);
-            highTempFahrenheit = Math.round(highTempCelsius * 9) / 5 + 32;
-            lowTempFahrenheit = Math.round(lowTempCelsius * 9) / 5 + 32;
+            highTempCelsius = Math.floor(data.main.temp_max);
+            lowTempCelsius = Math.floor(data.main.temp_min);
+            highTempFahrenheit = Math.floor(highTempCelsius * 9) / 5 + 32;
+            lowTempFahrenheit = Math.floor(lowTempCelsius * 9) / 5 + 32;
 
             tempInFahrenheit = currentTempInFahrenheit + "&#176 F";
             tempInCelsius = currentTempInCelsius + "&#176 C";
@@ -158,7 +158,7 @@ updateDisplay = () => {
     document.querySelector('.time').innerHTML = `${timeNow}`;
     document.querySelector('.city').innerHTML = `${cityName}`;
     document.querySelector('.country').innerHTML = `${country}`;
-    document.querySelector('.temp').innerHTML = tempInFahrenheit;
+    document.querySelector('.main-temp').innerHTML = tempInFahrenheit;
     document.querySelector('.temp-high').innerHTML = highTempFahrenheit;
     document.querySelector('.temp-low').innerHTML = lowTempFahrenheit;
 
@@ -167,15 +167,19 @@ updateDisplay = () => {
 }
 
 getFahrenheit = () => {
-    document.querySelector('.temp').innerHTML = tempInFahrenheit;
+    document.querySelector('.main-temp').innerHTML = tempInFahrenheit;
     document.querySelector('.temp-high').innerHTML = highTempFahrenheit;
     document.querySelector('.temp-low').innerHTML = lowTempFahrenheit;
+    document.querySelector('.fahrenheit-trigger').classList.add('active');
+    document.querySelector('.celsius-trigger').classList.remove('active');
 }
 
 getCelsius = () => {
-    document.querySelector('.temp').innerHTML = tempInCelsius;
+    document.querySelector('.main-temp').innerHTML = tempInCelsius;
     document.querySelector('.temp-high').innerHTML = highTempCelsius;
     document.querySelector('.temp-low').innerHTML = lowTempCelsius;
+    document.querySelector('.fahrenheit-trigger').classList.remove('active');
+    document.querySelector('.celsius-trigger').classList.add('active');
 }
 
 const fButton = document.querySelector('.fahrenheit-trigger');

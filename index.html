@@ -13,35 +13,42 @@
 
     <div id="lat-lon">
         <div class="main-wrapper">
+            
+            <div class="current-info">
+                <div class="day-of-week">--</div>
+                <div class="time-wrapper">
+                    <i class="fa fa-clock-o"></i>
+                    <span class="time"></span>
+                </div>
+                <div class="local">
+                    <i class="fa fa-map-marker"></i>
+                    <span class="city"></span>,
+                    <span class="country"></span>
+                </div>
+            </div>
 
             <div class="weather-icon">
-                <i class="wi"></i>
+                <span class="wi"></span>
                 <div class="weather">--</div>
-                <div class="day-of-week">--</div>
             </div>
 
             <div class="weather-details">
-                <div class="current-info">
-                    <div class="time-wrapper"><i class="fa fa-clock-o"></i> <span class="time"></span></div>
-                    <div class="local">
-                        <i class="fa fa-map-marker"></i>
-                        <span class="city"></span>,
-                        <span class="country"></span>
-                    </div>
-                </div>
-
+                
                 <div class="temp-wrapper">
-                    <div class="temp"></div>
-                    <div class="temp-high-low">
-                        <div class="temp-high-wrapper"><span>H </span><span class="temp-high"></span>&#176;</div>
-                        <div class="temp-low-wrapper"><span>L </span><span class="temp-low"></span>&#176;</div>
+                    <div class="main-temp"></div>
+                    <div class="temp-switch-wrapper">
+                        <div class="temp-high-low">
+                            <div class="temp-high-wrapper"><span>H </span><span class="temp-high"></span>&#176;</div> 
+                            <div class="temp-low-wrapper"><span>/ L </span><span class="temp-low"></span>&#176;</div>
+                        </div>
+                        <div class="switch">
+                            <button class="fahrenheit-trigger">F&#176;</button>/
+                            <button class="celsius-trigger">C&#176;</button>
+                        </div>
                     </div>
                 </div>
 
-                <div class="switch">
-                    <button class="fahrenheit-trigger">F&#176;</button>/
-                    <button class="celsius-trigger">C&#176;</button>
-                </div>
+                
 
             </div>
 
