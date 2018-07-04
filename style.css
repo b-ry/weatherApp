@@ -204,6 +204,11 @@ body.night-hot .main-wrapper {
     box-shadow: inset 0 0 2rem rgba(255, 255, 255, 0.05), 0 .5rem 2rem rgba(0, 0, 0, 0.15);
     padding: 1.5rem;
     font-size: 1.6rem;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,ffffff+100&0.05+0,0.05+100 */
+    background: -moz-linear-gradient(-45deg, rgba(0,0,0,0.05) 0%, rgba(255,255,255,0.05) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, rgba(0,0,0,0.05) 0%,rgba(255,255,255,0.05) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, rgba(0,0,0,0.05) 0%,rgba(255,255,255,0.05) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0d000000', endColorstr='#0dffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 .current-info {
